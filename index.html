@@ -176,6 +176,7 @@ future updates:
       <!--Technologies Filter -->
       <section id="technologies">
       <h2>Technical Skills</h2>
+      <p class="filter-description">Click any skill to filter projects below</p>
       <div class="tech-filter-container">
         <!-- Python -->
         <button class="tech-filter-btn" data-tech="python">
@@ -274,9 +275,10 @@ future updates:
         </button>
 
         <!-- Clear Filters -->
-        <button class="tech-filter-btn" id="clearFilters">
+        <button class="tech-filter-btn clear-filters-btn" id="clearFilters">
           <i class="bx bx-x"></i>
-            </button>
+          <span>Clear All</span>
+        </button>
           </div>
         </section>
     
@@ -719,9 +721,9 @@ function filterProjects() {
   /* ==========================================================
      8. Map
   ========================================================== */
-// Define the two map style URLs (make sure they match the correct theme)
-  const lightStyle = 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json';
-  const darkStyle = 'https://tiles.basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json';
+// Define the two map style URLs (inverted for visual contrast: dark map on light theme, light map on dark theme)
+  const lightStyle = 'https://tiles.basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json';
+  const darkStyle = 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json';
 
   // Check the saved theme; default to 'dark' if not set
   const savedTheme = localStorage.getItem('theme') || 'dark';
