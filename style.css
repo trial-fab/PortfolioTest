@@ -1226,11 +1226,22 @@ section#technologies::before {
 
 #technologies h2 {
   font-size: var(--font-size-xl);
-  margin-bottom: var(--space-sm);
+  margin-bottom: var(--space-xs);
   font-weight: var(--font-weight-medium);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-size: clamp(1em, 2vw, 1em);
+}
+
+/* Filter description helper text */
+.filter-description {
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--highlight-name);
+  margin-bottom: var(--space-sm);
+  font-weight: var(--font-weight-medium);
+  font-style: italic;
+  opacity: 0.9;
 }
 
 /* Container for the tech buttons */
@@ -1272,16 +1283,50 @@ section#technologies::before {
 /* Active state */
 .tech-filter-btn.active {
   border-color: var(--highlight-name);
-  box-shadow: 0 0 5px var(--highlight-name);
+  background-color: var(--highlight-name);
+  box-shadow: 0 0 8px var(--highlight-name);
+  transform: scale(1.02);
 }
 
 .tech-filter-btn.active i {
+  color: var(--color-light);
+}
+
+.tech-filter-btn.active span {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-light);
+}
+
+.tech-filter-btn:hover span {
+  font-weight: var(--font-weight-bold);
   color: var(--highlight-name);
 }
 
-.tech-filter-btn.active span, .tech-filter-btn:hover span {
+/* Clear All button - distinct styling */
+.clear-filters-btn {
+  border-color: #dc3545;
+  color: #dc3545;
+}
+
+.clear-filters-btn i {
+  color: #dc3545;
+  font-size: var(--font-size-xxl);
+}
+
+.clear-filters-btn span {
+  color: #dc3545;
   font-weight: var(--font-weight-bold);
-  color: var(--highlight-name);
+}
+
+.clear-filters-btn:hover {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  box-shadow: 0 0 8px rgba(220, 53, 69, 0.5);
+}
+
+.clear-filters-btn:hover i,
+.clear-filters-btn:hover span {
+  color: var(--color-light);
 }
 
 /* ==========================================================================
