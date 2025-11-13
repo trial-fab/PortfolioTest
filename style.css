@@ -1302,6 +1302,12 @@ section#technologies::before {
   color: var(--highlight-name);
 }
 
+/* Prevent text color change on active button hover */
+.tech-filter-btn.active:hover span,
+.tech-filter-btn.active:hover i {
+  color: var(--color-light);
+}
+
 /* Clear All button - distinct styling */
 .clear-filters-btn {
   border-color: #dc3545;
