@@ -720,11 +720,11 @@ function filterProjects() {
      8. Map
   ========================================================== */
 // Define the two map style URLs (make sure they match the correct theme)
-  const lightStyle = 'https://tiles.basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json';
-  const darkStyle = 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json';
+  const lightStyle = 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json';
+  const darkStyle = 'https://tiles.basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json';
 
-  // Check the saved theme; default to 'light' if not set
-  const savedTheme = localStorage.getItem('theme') || 'light';
+  // Check the saved theme; default to 'dark' if not set
+  const savedTheme = localStorage.getItem('theme') || 'dark';
   // Use the appropriate map style based on the saved theme
   const defaultStyle = savedTheme === 'dark' ? darkStyle : lightStyle;
 
