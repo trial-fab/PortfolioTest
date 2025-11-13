@@ -117,6 +117,9 @@
   --tech-pill-bg: #00573f78;
   --tech-pill-text: #000000;
 
+  /* Tech Filter Active State */
+  --tech-filter-active-border: var(--color-gold);
+
   /* Modal */
   --modal-bg: var(--color-light);
   --modal-border-left: var(--color-gold);
@@ -175,6 +178,9 @@
   --project-item-hover-shadow: 0 0 15px var(--color-light-accent);
   --tech-pill-bg: #a8b2d17a;
   --tech-pill-text: #ffffff;
+
+  /* Tech Filter Active State */
+  --tech-filter-active-border: var(--color-light);
 
   /* Modal */
   --modal-bg: var(--color-dark-bg-2);
@@ -1282,7 +1288,7 @@ section#technologies::before {
 
 /* Active state */
 .tech-filter-btn.active {
-  border-color: var(--highlight-name);
+  border-color: var(--tech-filter-active-border);
   background-color: var(--highlight-name);
   box-shadow: 0 0 8px var(--highlight-name);
   transform: scale(1.02);
