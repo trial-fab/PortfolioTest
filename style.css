@@ -560,12 +560,11 @@ header.common-header .logo:hover {
   border: 1px solid var(--highlight-name);
   border-radius: var(--radius-sm);
   display: inline-block;
-  margin-top: auto;
   font-size: clamp(0.75rem, 2vw, 0.875rem);
-  align-self: center;
   min-width: 120px;
   text-align: center;
   transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+  flex-grow: 1;
 }
 
 .project-link:hover {
@@ -573,6 +572,38 @@ header.common-header .logo:hover {
   background-color: var(--highlight-name);
   transform: translateY(-2px);
 }
+
+/* Project links container */
+.project-links {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+}
+
+/* Square icon button for live demos/videos */
+.project-link-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--highlight-name);
+  border-radius: var(--radius-sm);
+  color: var(--highlight-name);
+  text-decoration: none;
+  font-size: 1.25rem;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.project-link-icon:hover {
+  color: var(--color-light);
+  background-color: var(--highlight-name);
+  transform: translateY(-2px);
+}
+
 /* ==========================================================================
    5. Social Links & Dark Mode Toggle
    ========================================================================== */
