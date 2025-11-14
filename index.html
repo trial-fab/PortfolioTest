@@ -176,7 +176,7 @@ future updates:
       <!--Technologies Filter -->
       <section id="technologies">
       <h2>Technical Skills</h2>
-      <p class="filter-description">Click any skill to filter projects below</p>
+      <p class="filter-description" id="filterDescription">Click any skill to filter projects below</p>
       <div class="tech-filter-container">
         <!-- Python -->
         <button class="tech-filter-btn" data-tech="python">
@@ -284,12 +284,6 @@ future updates:
         <button class="tech-filter-btn" data-tech="ux / ui">
           <i class="bx bx-layout"></i>
           <span>UX / UI</span>
-        </button>
-
-        <!-- Clear Filters -->
-        <button class="tech-filter-btn clear-filters-btn" id="clearFilters">
-          <i class="bx bx-x"></i>
-          <span>Clear All</span>
         </button>
           </div>
         </section>
@@ -719,8 +713,9 @@ equalizeTimelineHeights();
    7. Technology Filters
 =========================================================== */
 
-// Select the tech filter buttons (excluding the clear button)
-const techButtons = document.querySelectorAll('.tech-filter-btn:not(#clearFilters)');
+// Select the tech filter buttons and filter description
+const techButtons = document.querySelectorAll('.tech-filter-btn');
+const filterDescription = document.getElementById('filterDescription');
 let selectedTechs = [];
 
 // Toggle active state on tech buttons
@@ -729,21 +724,41 @@ techButtons.forEach(btn => {
     btn.classList.toggle('active');
     updateSelectedTechs();
     filterProjects();
+    updateFilterDescription();
   });
 });
 
-// Clear Filters button
-document.getElementById('clearFilters').addEventListener('click', function() {
+// Click handler for filter description (clear filters when active)
+filterDescription.addEventListener('click', function() {
+  if (selectedTechs.length > 0) {
+    clearAllFilters();
+  }
+});
+
+// Clear all filters
+function clearAllFilters() {
   techButtons.forEach(btn => btn.classList.remove('active'));
   selectedTechs = [];
   filterProjects();
-});
+  updateFilterDescription();
+}
 
 // Update the list of selected technologies from the active filter buttons
 function updateSelectedTechs() {
   selectedTechs = Array.from(techButtons)
     .filter(btn => btn.classList.contains('active'))
     .map(btn => btn.getAttribute('data-tech').toLowerCase());
+}
+
+// Update filter description text and styling based on active filters
+function updateFilterDescription() {
+  if (selectedTechs.length > 0) {
+    filterDescription.textContent = 'Click here to clear filters';
+    filterDescription.classList.add('filter-active');
+  } else {
+    filterDescription.textContent = 'Click any skill to filter projects below';
+    filterDescription.classList.remove('filter-active');
+  }
 }
 
 // Filter projects based on the technology names extracted from the project's tech-pill elements
@@ -755,7 +770,7 @@ function filterProjects() {
     // Create an array of technology names (lowercase) for this project
     const projectTechs = Array.from(techElements)
       .map(el => el.textContent.trim().toLowerCase());
-    
+
     // If no filters are active, show all projects
     if (selectedTechs.length === 0) {
       project.style.display = '';

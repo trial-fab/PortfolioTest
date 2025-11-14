@@ -1248,6 +1248,18 @@ section#technologies::before {
   font-weight: var(--font-weight-medium);
   font-style: italic;
   opacity: 0.9;
+  transition: color var(--transition-normal), cursor var(--transition-quick);
+}
+
+/* Filter description active state (when filters are selected) */
+.filter-description.filter-active {
+  color: #dc3545;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.filter-description.filter-active:hover {
+  text-decoration: underline;
 }
 
 /* Container for the tech buttons */
@@ -1311,33 +1323,6 @@ section#technologies::before {
 /* Prevent text color change on active button hover */
 .tech-filter-btn.active:hover span,
 .tech-filter-btn.active:hover i {
-  color: var(--color-light);
-}
-
-/* Clear All button - distinct styling */
-.clear-filters-btn {
-  border-color: #dc3545;
-  color: #dc3545;
-}
-
-.clear-filters-btn i {
-  color: #dc3545;
-  font-size: var(--font-size-xxl);
-}
-
-.clear-filters-btn span {
-  color: #dc3545;
-  font-weight: var(--font-weight-bold);
-}
-
-.clear-filters-btn:hover {
-  background-color: #dc3545;
-  border-color: #dc3545;
-  box-shadow: 0 0 8px rgba(220, 53, 69, 0.5);
-}
-
-.clear-filters-btn:hover i,
-.clear-filters-btn:hover span {
   color: var(--color-light);
 }
 
