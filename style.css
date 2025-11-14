@@ -530,6 +530,7 @@ header.common-header .logo:hover {
   justify-content: center;
   gap: 0.25rem;
   margin-bottom: clamp(0.75rem, 2vw, 1rem);
+  margin-top: auto;
 }
 
 /* Tech pill styling */
